@@ -198,7 +198,7 @@ def gui3():
 def gui4():
 
     def gui41():
-        webbrowser.open('https://adventuresungsu.000webhostapp.com/code.py')
+        webbrowser.open('https://drive.google.com/file/d/1sLZjDHuGbxNZ-f5B-XVXTswwjuqsoyK2/view?usp=sharing')
     main1234 = Tk()
     main1234.title("AUTO CLICK PROGRAM V 2.0/정보")
     main1234.geometry("825x275")
@@ -232,17 +232,25 @@ def setting():
         a = get_var1.get()
         ㅠㅠ = open("clickstart--time.txt", 'w')
         ㅠㅠ.write(a)
+        if a == '':
+            pyautogui.alert("옳은 값이 아닙니다. 다시 해주십시오.")
+            return
         pyautogui.alert('적용이 완료되었습니다. 프로그램을 재시작 하십시오')
         main.destroy()
         setting.destroy()
 
-
+    mainlabels1 = Label(setting, text="""클릭을 시작하기 전 대기 시간을 설정합니다.
+원하는 대기 시간을 입력후, 확인을 눌러주세요""")
+    mainlabels1.place(x = 0, y = 5)
     mainlabels = Button(setting, text="                    확인                    ", font=("굴림", 15), command=settingsecond)
     mainlabels.place(x = 5, y = 80)
 
     getsecond111 = StringVar
     get_var1 = Entry(setting, width=48, textvariable = getsecond111)
     get_var1.place(x = 5, y = 50)
+
+f1 = open("clickstart--time.txt", 'w')
+f1.close()
 
 f = open("clickstart--time.txt", 'r')
 sseecond = f.readline()
